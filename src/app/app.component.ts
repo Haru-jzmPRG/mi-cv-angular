@@ -1,12 +1,13 @@
 import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, DatePipe],
+  imports: [DatePipe, NgOptimizedImage],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'mi-cv-angular';
@@ -21,29 +22,29 @@ export class AppComponent {
   email = 'programajazminc20@gmil.com';
   github = 'https://github.com/Haru-jzmPRG';
 
-  idiomas = [
-    'Español',
-    ' Inglés',
-    ' Portugués'
-  ];
+  idiomas = ['Español', ' Inglés', ' Portugués'];
 
   /*Sobre mí*/
-  sobreMi = 'Soy una persona proactiva, responsable y con muchas ganas de aprender. Me gusta trabajar en equipo y aportar ideas nuevas.';
+  fotoPerfil = '/foto_carnet.jpg';
+  sobreMi =
+    'Soy una persona proactiva, responsable y con muchas ganas de aprender. Me gusta trabajar en equipo y aportar ideas nuevas.';
 
-  /*Experiencia*/
-  experiencia = [
+  /* Experiencia */
+  experiencias = [
     {
       puesto: 'Practicante de desarrollo',
       empresa: 'NTT Data',
       fecha: 'Marzo 2025 - Actualidad',
-      descripcion: 'Realización de cursos de formación y prácticas en desarrollo de aplicaciones web y móviles, utilizando tecnologías como Angular y Node.js.'
+      descripcion:
+        'Realización de cursos de formación y prácticas en desarrollo de aplicaciones web y móviles.',
     },
     {
-      puesto: 'Tecnica Microinformática',
-      empresa: 'PC Tech marbella',
+      puesto: 'Técnica Microinformática',
+      empresa: 'PC Tech Marbella',
       fecha: 'Marzo 2023 - Junio 2025',
-      descripcion: 'Tecnica en sistemas microinformáticos y redes, realizando mantenimiento de equipos y soporte técnico a clientes.'
-    }
+      descripcion:
+        'Técnica en sistemas microinformáticos y redes, realizando mantenimiento de equipos y soporte técnico a clientes.',
+    },
   ];
 
   /*Formación*/
@@ -51,24 +52,17 @@ export class AppComponent {
     {
       titulo: 'Desarrollo de Aplicaciones Multiplataforma',
       centro: 'CPIFP Alan Turing',
-      fecha: '2025 - Actualidad'
+      fecha: '2025 - Actualidad',
     },
     {
       titulo: 'Técnico en Sistemas Microinformáticos y Redes',
       centro: 'IES Victoria Kent',
-      fecha: '2023 - 2025'
-    }
+      fecha: '2023 - 2025',
+    },
   ];
 
   /*Tecnologías*/
-  tecnologias = [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'TypeScript',
-    'Angular',
-    'Java'
-  ];
+  tecnologias = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Angular', 'Java'];
 
   /*Pie de página*/
   textoPie = 'Currículum desarrollado con Angular';

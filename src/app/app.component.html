@@ -6,44 +6,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV - Jazmin Gutierrez Castro</title>
 </head>
+<div class="cv">
+  <header class="cabecera">
 
-<header class="cabecera">
-  <h1>{{ nombre }}</h1>
-  <h2>{{ profesion }}</h2>
-</header>
+    <div class="datos-cabecera">
+      <h1>{{ nombre }}</h1>
+      <h2>{{ profesion }}</h2>
+    </div>
 
-<div class="conteiner">
-  <aside class="lateral">
-    <h2> Contacto</h2>
-    <p>{{ ciudad }}</p>
-    <p>{{ numero }}</p>
-    <p>{{ email }}</p>
-    <p>{{ github }}</p>
+    <img [ngSrc]="fotoPerfil" width="150" height="150" alt="Foto de perfil" class="foto-perfil">
 
-    <p><strong>Idiomas:</strong></p>
-    <p>{{ idiomas }}</p>
-  </aside>
+  </header>
 
-  <main class="principal">
-    <h2>Sobre mí</h2>
-    <p>{{ sobreMi }}</p>
+  <div class="conteiner">
+    <aside class="lateral">
+      <h2> Contacto</h2>
+      <p>{{ ciudad }}</p>
+      <p>{{ numero }}</p>
+      <p>{{ email }}</p>
+      <p>{{ github }}</p>
 
-    <h2>Experiencia</h2>
-    <p>{{ experiencia }}</p>
+      <p><strong>Idiomas:</strong></p>
+      <p>{{ idiomas }}</p>
 
-    <h2>Formación</h2>
-    <p>{{ formacion }}</p>
+    </aside>
 
-    <h2>Tecnologías</h2>
-    <p>{{ tecnologias }}</p>
+    <main class="principal">
+      <h2>Sobre mí</h2>
+      <p>{{ sobreMi }}</p>
 
-  </main>
+      <section>
+        <h2>Experiencia</h2>
+
+        @for (experiencia of experiencias; track $index) {
+
+        <article class="experiencia">
+
+          <h3>{{ experiencia.puesto }}</h3>
+
+          <p>{{ experiencia.empresa }}</p>
+
+          <p>{{ experiencia.fecha }}</p>
+
+          <p>{{ experiencia.descripcion }}</p>
+
+        </article>
+
+        }
+      </section>
+
+      <section>
+        <h2>Formación</h2>
+        @for (formacion of formacion; track $index) {
+
+        <article class="experiencia">
+
+          <h3>{{ formacion.titulo }}</h3>
+
+          <p>{{ formacion.centro }}</p>
+
+          <p>{{ formacion.fecha }}</p>
+
+        </article>
+
+        }
+
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="pie">
+    <p>
+      {{ textoPie }} - {{ fechaActual | date: 'dd/MM/yyyy' }}
+    </p>
+  </footer>
 </div>
-
-<footer class="pie">
-  <p>
-    {{ textoPie }} - {{ fechaActual | date: 'dd/MM/yyyy' }}
-  </p>
-</footer>
 
 </html>
